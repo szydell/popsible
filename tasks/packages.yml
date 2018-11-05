@@ -1,4 +1,4 @@
 - name: Install packages    
   dnf:
-    name: ['htop', 'mc', 'vim', 'golang']
+    name: ['htop', 'mc', 'vim', 'golang', 'flatpak']
     state: present
