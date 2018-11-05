@@ -1,5 +1,5 @@
 - file:
-    path: "{{home}}/logs"
+    path: "~/logs"
     state: directory
   become: true
   become_method: sudo

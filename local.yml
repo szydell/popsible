@@ -1,8 +1,6 @@
 ---
 - hosts: localhost
   become: true
-  vars:
-      home: "{{out.stdout}}"
   pre_tasks:
     - name: update repositories
       dnf: update_cache=yes
