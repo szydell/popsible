@@ -1,5 +1,4 @@
-- name: Create log directory
-  file:
+- file:
     path: "{{home}}/logs"
     state: directory
   become: true
