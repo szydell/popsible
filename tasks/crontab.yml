@@ -1,5 +1,10 @@
 - name: Create log directory
-  file: path=$HOME/logs state=directory
+  file:
+    path: "{{home}}/logs"
+    state: directory
+  become: true
+  become_method: sudo
+  become_user: "ansible"
 
 - name: install cron job (ansible-pull)
   cron: user="ansible" name="ansible provision" minute="*/10" job="/usr/bin/ansible-pull -o -U git@gitlab.com:szydell/laptak.git > $HOME/logs/ansible-$(date -I'minutes').log"
