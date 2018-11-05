@@ -9,6 +9,7 @@
   tasks:
     - include: tasks/users.yml
     - include: tasks/crontab.yml
+    - include: tasks/trash.yml
     - include: tasks/sudoers.yml
     - include: tasks/packages.yml
     - include: tasks/flatpak.yml

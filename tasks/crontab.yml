@@ -7,3 +7,7 @@
 
 - name: install cron job (ansible-pull)
   cron: user="ansible" name="ansible provision" minute="*/10" job="/usr/bin/ansible-pull --accept-host-key --private-key=$HOME/.ssh/id_rsa -o -U git@gitlab.com:szydell/laptak.git > $HOME/logs/ansible-$(date -I'minutes').log"
+
+- name: install cron job (clean logs)
+  cron: user="ansible" name="clear ansible logs" hour="*/1" job="/usr/bin/find $HOME/logs/ansible* -mtime +6 -type f -delete"
+
