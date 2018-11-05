@@ -7,6 +7,6 @@
       changed_when: False
   tasks:
     - name: Install packages    
-    dnf:
+      dnf:
         name: ['htop', 'mc', 'vim', 'golang']
         state: present
