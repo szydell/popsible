@@ -7,3 +7,7 @@
           backup: yes
           mode: 0600
 
+- name: restart kglobalaccel
+  become: szydell
+  command: kquitapp kglobalaccel && sleep 2s && kglobalaccel &
+
