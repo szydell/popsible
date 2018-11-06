@@ -9,5 +9,5 @@
 
 - name: restart kglobalaccel
   become: szydell
-  command: kquitapp kglobalaccel && sleep 2s && kglobalaccel &
+  command: kquitapp kglobalaccel5 && sleep 2s && kglobalaccel5 &
 
