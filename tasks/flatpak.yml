@@ -1,12 +1,21 @@
+- name: Add the flathub flatpak repository
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+
 # Zmienic na poprawny sposob instalacji po upgrade do wersji 2.7.1 (do 2.7 jest bug)
 #- name: Install the spotify flatpak
 #  flatpak:
 #    name:  https://s3.amazonaws.com/alexlarsson/spotify-repo/spotify.flatpakref
 #    state: present
 #
-- name: Enable Flathub repository
-  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 
 - name: Install Spotify
   command: flatpak install --assumeyes flathub com.spotify.Client
 
+
+- name: Flatpak update
+  command: flatpak update
