@@ -7,14 +7,16 @@
           backup: yes
           mode: 0600
 
+- shell: pgrep kglobalaccel5
+  register: kglobalaccel5_pid
+
 - name: Stop kglobalaccel
-  command: /usr/bin/pkill kglobalaccel5
+  command: /usr/bin/kill {{ kglobalaccel5_pid }}
 
 - name: Wait for kglobalaccel5 to stop
-  win_wait_for_process:
-    process_name: 'kglobalaccel5'
+  wait_for:
+    path: /proc/{{ kglobalaccel5_pid }}/status
     state: absent
-    timeout: 30
 
 - name: Start kglobalaccel
   command: runuser -l szydell -c '/usr/bin/kglobalaccel5 &'
