@@ -1,0 +1,9 @@
+- name: Set Meta+l as default lock shortcut
+  ini_file:
+          path: ~/.config/kglobalshortcutsrc
+          section: ksmserver
+          option: Lock Session
+          value: Meta+L\tScreensaver,Ctrl+Alt+L\tScreensaver,Lock Session
+          backup: yes
+          mode: 0600
+

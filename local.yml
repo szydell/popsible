@@ -13,4 +13,5 @@
     - include: tasks/sudoers.yml
     - include: tasks/packages.yml
     - include: tasks/flatpak.yml
+    - include: tasks/kde.yml
 
