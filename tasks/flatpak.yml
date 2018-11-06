@@ -5,9 +5,7 @@
 #    state: present
 #
 - name: Enable Flathub repository
-      become: yes
       command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 - name: Install Spotify
-      become: yes
       command: flatpak install --assumeyes flathub com.spotify.Client
 
