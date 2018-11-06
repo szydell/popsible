@@ -8,7 +8,6 @@
           mode: 0600
 
 - name: Stop kglobalaccel
-  become: szydell
   command: /usr/bin/pkill kglobalaccel5
 
 - name: Wait for kglobalaccel5 to stop
@@ -18,6 +17,5 @@
     timeout: 30
 
 - name: Start kglobalaccel
-  become: szydell
-  command: /usr/bin/kglobalaccel5 &
+  command: runuser -l szydell -c '/usr/bin/kglobalaccel5 &'
 
