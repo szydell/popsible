@@ -19,5 +19,7 @@
     state: absent
 
 - name: Start kglobalaccel
-  command: runuser -l szydell -c '/usr/bin/kglobalaccel5 &'
+  become: yes
+  become_user: szydell
+  command: /usr/bin/kglobalaccel5 &
 
