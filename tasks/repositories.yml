@@ -1,0 +1,18 @@
+#Import klicza do VSC repository
+- rpm_key:
+    state: present
+    key: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add Visual Studio Code repository
+  yum_repository:
+    name: vscode
+    description: Visual Studio Code repository
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: yum-clean-metadata
+  command: yum clean metadata
+  args:
+    warn: no
+
