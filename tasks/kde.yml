@@ -11,11 +11,11 @@
   register: kglobalaccel5_pid
 
 - name: Stop kglobalaccel
-  command: /usr/bin/kill {{ kglobalaccel5_pid }}
+  command: /usr/bin/kill {{ kglobalaccel5_pid.stdout }}
 
 - name: Wait for kglobalaccel5 to stop
   wait_for:
-    path: /proc/{{ kglobalaccel5_pid }}/status
+    path: /proc/{{ kglobalaccel5_pid.stdout }}/status
     state: absent
 
 - name: Start kglobalaccel
