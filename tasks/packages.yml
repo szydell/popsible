@@ -1,4 +1,4 @@
 - name: Install packages    
   dnf:
-    name: ['htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities']
+    name: ['htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code']
     state: present
