@@ -7,7 +7,17 @@
           backup: yes
           mode: 0600
 
-- name: restart kglobalaccel
+- name: Stop kglobalaccel
   become: szydell
-  command: /usr/bin/kquitapp5 kglobalaccel5 && sleep 2s && kglobalaccel5 &
+  command: /usr/bin/kquitapp5 kglobalaccel5
+
+- name: Wait for kglobalaccel5 to stop
+  win_wait_for_process:
+    process_name: 'kglobalaccel5'
+    state: absent
+    timeout: 30
+
+- name: Start kglobalaccel
+  become: szydell
+  command: /usr/bin/kglobalaccel5 &
 
