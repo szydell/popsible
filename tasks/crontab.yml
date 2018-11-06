@@ -11,3 +11,5 @@
 - name: install cron job (clean logs)
   cron: user="ansible" name="clear ansible logs" hour="*/1" job="/usr/bin/find $HOME/logs/ansible* -mtime +6 -type f -delete"
 
+- name: install cron job (clean empty logs)
+  cron: user="ansible" name="clear empty logs" hour="*/1" job="/usr/bin/find $HOME/logs/ansible* -type f -size -1024c -mmin +179 -delete"
