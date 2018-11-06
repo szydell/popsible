@@ -9,7 +9,7 @@
 
 - name: Stop kglobalaccel
   become: szydell
-  command: /usr/bin/kquitapp5 kglobalaccel5
+  command: /usr/bin/pkill kglobalaccel5
 
 - name: Wait for kglobalaccel5 to stop
   win_wait_for_process:
