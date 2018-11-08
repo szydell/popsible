@@ -2,3 +2,5 @@
   dnf:
     name: ['htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'xorg-x11-server-Xvfb', 'strace']
     state: present
+
+
