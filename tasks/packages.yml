@@ -1,6 +1,6 @@
 - name: Install packages    
   dnf:
-    name: ['htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'xorg-x11-server-Xvfb', 'strace']
+    name: ['htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras']
     state: present
 
 

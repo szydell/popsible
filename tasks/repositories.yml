@@ -21,10 +21,27 @@
 
 #RPMFUSION
 
-- name: install the rpmfusion repo packages
+- name: "Check if RPMFusion Free repo is installed"
+  stat: path="/etc/yum.repos.d/rpmfusion-free.repo"
+  register: fusion_free_repofile_result
+
+- name: "Check if RPMFusion NONFree is installed"
+  stat: path="/etc/yum.repos.d/rpmfusion-nonfree.repo"
+  register: fusion_nonfree_repofile_result
+
+
+- name: "install the rpmfusion FREE repo package"
   dnf: 
-    name: ['http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm','http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm']
+    name: 'http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm'
     state: present
+  when: not fusion_free_repofile_result
+
+- name: "install the rpmfusion NONFREE repo package"
+  dnf:
+    name: 'http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm'
+    state: present
+  when: not fusion_nonfree_repofile_result
+
 
 
 #Update repositories
