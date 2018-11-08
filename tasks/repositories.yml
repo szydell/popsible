@@ -19,22 +19,22 @@
 
 #EPEL
 
-- name: 1.Check if EPEL repo is already configured.
-  stat: path="/etc/yum.repos.d/epel.repo"
-  register: epel_repofile_result
+    #- name: 1.Check if EPEL repo is already configured.
+    #stat: path="/etc/yum.repos.d/epel.repo"
+    #register: epel_repofile_result
 
-- name: 2.Install EPEL repo.
-  dnf:
-    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm" 
-    state: present
-  register: result
-  when: not epel_repofile_result.stat.exists
+    #- name: 2.Install EPEL repo.
+    #dnf:
+    #name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm" 
+    #state: present
+    #register: result
+    #when: not epel_repofile_result.stat.exists
 
-- name: 3.Import EPEL GPG key.
-  rpm_key:
-    key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}" 
-    state: present
-  when: not epel_repofile_result.stat.exists
+    #- name: 3.Import EPEL GPG key.
+    #rpm_key:
+    #key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}" 
+    #state: present
+    #when: not epel_repofile_result.stat.exists
 
 #RPMFUSION
 
@@ -42,4 +42,7 @@
   dnf: 
     name: ['http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm','http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm']
     state: present
+
+- name: update repositories
+  dnf: update_cache=yes
 
