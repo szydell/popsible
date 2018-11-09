@@ -5,15 +5,15 @@
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: user
 
-- name: Install the spotify flatpak
-  flatpak:
-    name:  https://s3.amazonaws.com/alexlarsson/spotify-repo/spotify.flatpakref
-    state: present
+    #- name: Install the spotify flatpak
+    #flatpak:
+    #name:  https://s3.amazonaws.com/alexlarsson/spotify-repo/spotify.flatpakref
+    #state: present
 
 
 
-#- name: Install Spotify
-#command: flatpak install --assumeyes flathub com.spotify.Client
+- name: Install Spotify
+  command: flatpak install --assumeyes flathub com.spotify.Client
 
 
 - name: Flatpak update
