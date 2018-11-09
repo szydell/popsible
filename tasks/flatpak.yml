@@ -4,6 +4,8 @@
     state: present
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: user
+  become: true
+  become_user: szydell
 
     #- name: Install the spotify flatpak
     #flatpak:
