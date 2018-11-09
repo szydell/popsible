@@ -14,7 +14,10 @@
 
 - name: Install Spotify
   command: flatpak install --assumeyes flathub com.spotify.Client
-
+  become: true
+  become_user: szydell
 
 - name: Flatpak update
   command: flatpak update
+  become: true
+  become_user: szydell
