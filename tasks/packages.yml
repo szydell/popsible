@@ -1,6 +1,15 @@
-- name: Install packages    
+- name: upgrade all packages
   dnf:
-    name: ['htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras']
+    name: "*"
+    state: latest
+
+- name: Install packages
+  dnf:
+    name: ['@Development tools','htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel']
     state: present
+
+- name: Autoremove unneeded packages installed as dependencies
+  dnf:
+    autoremove: yes
 
 
