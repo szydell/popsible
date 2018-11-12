@@ -5,7 +5,7 @@
 
 - name: Install packages
   dnf:
-    name: ['@Development tools','htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel']
+    name: ['@Development tools', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel']
     state: present
 
 

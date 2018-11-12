@@ -1,25 +1,25 @@
-- name: Set Meta+l as default lock shortcut
-  ini_file:
-          path: ~/.config/kglobalshortcutsrc
-          section: ksmserver
-          option: Lock Session
-          value: Meta+L\tScreensaver,Ctrl+Alt+L\tScreensaver,Lock Session
-          backup: yes
-          mode: 0600
+#- name: Set Meta+l as default lock shortcut
+#  ini_file:
+#          path: ~/.config/kglobalshortcutsrc
+#          section: ksmserver
+#          option: Lock Session
+#          value: Meta+L\tScreensaver,Ctrl+Alt+L\tScreensaver,Lock Session
+#          backup: yes
+#          mode: 0600
 
-- shell: pgrep kglobalaccel5
-  register: kglobalaccel5_pid
+#- shell: pgrep kglobalaccel5
+#  register: kglobalaccel5_pid
 
-- name: Stop kglobalaccel
-  command: /usr/bin/kill {{ kglobalaccel5_pid.stdout }}
+#- name: Stop kglobalaccel
+#  command: /usr/bin/kill {{ kglobalaccel5_pid.stdout }}
 
 #- name: Wait for kglobalaccel5 to stop
 #  wait_for:
 #    path: /proc/{{ kglobalaccel5_pid.stdout }}/status
 #    state: absent
 
-- name: Start kglobalaccel
-  become: yes
-  become_user: szydell
-  command:  xvfb-run /usr/bin/kglobalaccel5 &
+#- name: Start kglobalaccel
+#  become: yes
+#  become_user: szydell
+#  command:  xvfb-run /usr/bin/kglobalaccel5 &
 
