@@ -2,6 +2,7 @@
   user: name=ansible uid=900
 
 - name: Adding szydell to additional groups  
-  user: groups: dialout, lock
-        append=yes
+  user: 
+    groups: dialout, lock
+    append: yes
 
