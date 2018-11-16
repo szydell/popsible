@@ -8,6 +8,15 @@
     name: ['@Development tools', 'arduino', 'esptool', 'nmap', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel']
     state: present
 
+- name: Create symlink for snapd
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    owner: root
+    group: root
+    state: link
+
+
 - name: Start snapd service, if not started
   service:
     name: snapd
