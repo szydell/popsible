@@ -12,4 +12,6 @@
     - include: tasks/flatpak.yml
     - include: tasks/kde.yml
     - include: tasks/bitwarden.yml
+    - include: tasks/onedrive.yml
+
 
