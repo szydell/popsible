@@ -1,6 +1,17 @@
----
-- hosts: localhost
+- hosts: localhost 
+  gather_facts: False
+  vars_prompt:
+    - name: "vaultpass"
+      prompt: "Provide vaultpass"
 
   tasks:
-    - include: tasks/initialize.yml
+    - name: Vaultpass.
+      debug:
+        msg: "{{ vaultpass }}"
+
+    - name: Create a vaultpass file
+      copy:
+        content: "{{ vaultpass }}"
+        dest: "~/.config/lapsible_vaultpass"
+        mode: 0400
 
