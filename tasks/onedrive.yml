@@ -22,3 +22,12 @@
     target: install
   become: true
 
+- name: create directory for onedrive configuration
+  file: path="~/.config/onedrive/" state=directory mode=0700
+  become: true
+  become_user: "szydell"
+
+- name: copy onedrive config
+  copy: src=files/onedrive_config dest="~/.config/onedrive/config" owner=szydell group=szydell mode=0600
+  become: true
+  become_user: "szydell"
