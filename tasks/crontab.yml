@@ -4,6 +4,15 @@
 - name: install cron job (szydell, clear Downloads)
   cron: user="szydell" name="clear Downloads" hour="*/1" job="/usr/bin/find $HOME/Downloads* -mtime +30 -type f -delete"
 
+- name: keep known_hosts up to date
+  cron:
+   user: "szydell"
+   name: "known_hosts updater"
+   job: "ansible-vault --vault-password-file ~/.config/lapsible_vaultpass encrypt ~/.ssh/known_hosts --output ~/development/lapsible/files/known_hosts"
+   special_time: "daily"
+
+
+
 #- file:
 #    path: "~/logs"
 #    state: directory
