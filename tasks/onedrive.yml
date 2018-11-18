@@ -13,6 +13,9 @@
 
 - make:
     chdir: /home/szydell/development/onedrive
+    params:
+      DC: /var/lib/snapd/snap/bin/dmd
+      NUM_THREADS: 4
 
 - make:
     chdir: /home/szydell/development/onedrive
