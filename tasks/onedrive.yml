@@ -33,7 +33,7 @@
   become_user: "szydell"
 
 - name: copy onedrive token
-  copy: rc=files/onedrive_token dest="~/.config/onedrive/refresh_token" owner=szydell group=szydell mode=0400 decrypt=true
+  copy: src=files/onedrive_token dest="~/.config/onedrive/refresh_token" owner=szydell group=szydell mode=0400 decrypt=true
   become: true
   become_user: "szydell"
 

@@ -22,3 +22,7 @@
     name: snapd
     state: started
 
+
+- name: pip install ansible-lint
+  pip:
+    name: ansible-lint
