@@ -2,5 +2,8 @@
     - name: "vaultpass"
       prompt: "Provide a vault pass"
 
-- copy: content = "{{ vaultpass }}" dest = "~/.config/lapsible_vaultpass" mode=0400
+- copy: 
+    content: "{{ vaultpass }}" 
+    dest: "~/.config/lapsible_vaultpass"
+    mode: 0400
 
