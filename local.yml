@@ -4,8 +4,9 @@
 
   tasks:
     - include: tasks/users.yml
-    - include: tasks/crontab.yml
+    - include: tasks/keys.yml
     - include: tasks/trash.yml
+    - include: tasks/crontab.yml
     - include: tasks/sudoers.yml
     - include: tasks/repositories.yml
     - include: tasks/packages.yml

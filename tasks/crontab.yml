@@ -1,3 +1,9 @@
+- name: install cron job (szydell, clear trash)
+  cron: user="szydell" name="clear trash" hour="*/1" job="/usr/bin/find $HOME/{Downloads,Documents,Pictures,Video}/trash/* -mtime +6 -type f -delete"
+
+- name: install cron job (szydell, clear Downloads)
+  cron: user="szydell" name="clear Downloads" hour="*/1" job="/usr/bin/find $HOME/Downloads* -mtime +30 -type f -delete"
+
 #- file:
 #    path: "~/logs"
 #    state: directory
