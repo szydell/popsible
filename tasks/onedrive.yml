@@ -11,3 +11,11 @@
   become_method: sudo
   become_user: "szydell"
 
+- make:
+    chdir: /home/szydell/development/onedrive
+
+- make:
+    chdir: /home/szydell/development/onedrive
+    target: install
+  become: true
+
