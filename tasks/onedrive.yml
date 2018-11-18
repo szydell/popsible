@@ -38,7 +38,7 @@
   become_user: "szydell"
 
 - name: enable and start onedrive
-   systemd: 
+  systemd: 
     state: started
     enabled: yes
     name: onedrive@szydell.service
