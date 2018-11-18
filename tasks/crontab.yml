@@ -8,7 +8,7 @@
   cron:
    user: "szydell"
    name: "known_hosts updater"
-   job: "ansible-vault --vault-password-file ~/.config/lapsible_vaultpass encrypt ~/.ssh/known_hosts --output ~/development/lapsible/files/known_hosts && cd ~/development/lapsible && git commit -m 'known_hosts updater' ~/development/lapsible/files/known_hosts && git push"
+   job: "ansible-vault --vault-password-file ~/.config/lapsible_vaultpass encrypt ~/.ssh/known_hosts --output ~/development/lapsible/files/known_hosts && cd ~/development/lapsible && git add files/known_hosts && git commit -m 'known_hosts updater' files/known_hosts && git push"
    special_time: "daily"
 
 

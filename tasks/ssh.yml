@@ -13,3 +13,8 @@
   become: true
   become_user: "szydell"
 
+- name: copy known hosts
+  copy: src=files/known_hosts dest="~/.ssh/known_hosts" owner=szydell group=szydell mode=0600 decrypt=true
+  become: true
+  become_user: "szydell"
+
