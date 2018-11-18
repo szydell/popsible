@@ -1,1 +1,1 @@
-skip_file = "Backups/|Obrazy/Z aparatu/"
+skip_file = "Backups/*|Obrazy/Z aparatu/*"
