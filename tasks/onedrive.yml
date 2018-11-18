@@ -4,4 +4,10 @@
 - name: Install dlang (dub) snap
   command: snap install --classic dub
 
+- git:
+    become: true
+    become_user: szydell 
+    repo: https://github.com/abraunegg/onedrive/
+    dest: /home/szydell/development/onedrive
+
 
