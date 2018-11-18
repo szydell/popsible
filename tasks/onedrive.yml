@@ -5,8 +5,8 @@
   command: snap install --classic dub
 
 - git:
-    become: true
-    become_user: szydell 
+  become: true
+  become_user: szydell 
     repo: https://github.com/abraunegg/onedrive/
     dest: /home/szydell/development/onedrive
 
