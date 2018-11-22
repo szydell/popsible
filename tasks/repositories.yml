@@ -4,8 +4,9 @@
   stat: path="/etc/yum.repos.d/vscode.repo"
   register: vcs_repofile_result
 
-#Import klicza do VSC repository
-- rpm_key:
+#Import klucza do VSC repository
+- name: import key to verify VSC repo
+  rpm_key:
     state: present
     key: https://packages.microsoft.com/keys/microsoft.asc
   when: not vcs_repofile_result

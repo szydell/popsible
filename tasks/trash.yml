@@ -1,25 +1,29 @@
-- file:
+- name: Create Downloads/trash directory
+  file:
     path: "~/Downloads/trash"
     state: directory
   become: true
   become_method: sudo
   become_user: "szydell"
  
-- file:
+- name: Create Documents/trash directory
+  file:
     path: "~/Documents/trash"
     state: directory
   become: true
   become_method: sudo
   become_user: "szydell"
 
-- file:
+- name: Create Pictures/trash directory
+  file:
     path: "~/Pictures/trash"
     state: directory
   become: true
   become_method: sudo
   become_user: "szydell"
 
-- file:
+- name: Create Video/trash directory
+  file:
     path: "~/Video/trash"
     state: directory
   become: true
