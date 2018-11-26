@@ -24,7 +24,7 @@
 
 - name: Create Video/trash directory
   file:
-    path: "~/Video/trash"
+    path: "~/Videos/trash"
     state: directory
   become: true
   become_method: sudo
