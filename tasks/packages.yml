@@ -5,7 +5,7 @@
 
 - name: Install packages
   dnf:
-    name: ['@Development tools', 'arduino', 'esptool', 'nmap', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel', 'NetworkManager-tui','VirtualBox','steam','automake','gnulib-devel']
+    name: ['@Development tools', 'arduino', 'esptool', 'nmap', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel', 'NetworkManager-tui','VirtualBox','steam','automake','gnulib-devel','libtool-ltdl-devel']
     state: present
 
 - name: Create symlink for snapd
