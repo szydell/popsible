@@ -2,3 +2,7 @@
   command: dnf config-manager rpmfusion-nonfree-nvidia-driver --set-enabled
   become: true
 
+- name: Install bumblebee nVidia packages
+  dnf:
+    name: ['akmod-nvidia','acpi']
+    state: present
