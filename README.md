@@ -1,6 +1,6 @@
 # laPtak
 
-playbooki ansible do ogarniania laptopa na fedorze
+playbooki ansible do ogarniania Oryxa na POP! os
 
 USAGE:
 1. /usr/bin/ansible-pull -U https://github.com/szydell/lapsible.git init.yml
