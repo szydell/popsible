@@ -4,6 +4,6 @@
 - name: Adding szydell to additional groups  
   user: 
     name: szydell 
-    groups: dialout, lock, bumblebee
+    groups: dialout, lock
     append: yes
 

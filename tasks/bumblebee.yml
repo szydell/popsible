@@ -6,3 +6,16 @@
   dnf:
     name: ['akmod-nvidia','acpi']
     state: present
+
+- name: Create group bumblebee
+  group:
+    name: bumblebee
+    state: present
+
+- name: Adding szydell to bumblebee group
+  user:
+    name: szydell
+    groups: bumblebee
+    append: yes
+
+
