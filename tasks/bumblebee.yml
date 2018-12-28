@@ -1,0 +1,4 @@
+- name: nVidia driver enable
+  command: dnf config-manager rpmfusion-nonfree-nvidia-driver --set-enabled
+  become: true
+
