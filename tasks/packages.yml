@@ -8,12 +8,13 @@
 - name: Download VS Code
   get_url: 
     url="https://go.microsoft.com/fwlink/?LinkID=760868"
-    dest="/home/{{ ansible_env.USER }}/Downloads/code.deb"
+    dest="/home/szydell/Downloads/code.deb"
+  become: true
+  become_user: "szydell"
   when: vscode_check_deb.rc == 1
 
 - name: Install VS Code
   apt: deb="/home/szydell/Downloads/code.deb"
-  become: true
   when: vscode_check_deb.rc == 1
 
 
