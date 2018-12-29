@@ -1,28 +1,24 @@
-- name: upgrade all packages
-  dnf:
-    name: "*"
-    state: latest
 
-- name: Install packages
-  dnf:
-    name: ['@Development tools', 'arduino', 'esptool', 'nmap', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel', 'NetworkManager-tui','VirtualBox','steam','fedora-workstation-repositories']
-    state: present
+- name: Check if VSCode is installed
+  command: dpkg-query -W code
+  register: vscode_check_deb
+  failed_when: vscode_check_deb.rc > 1
+  changed_when: vscode_check_deb.rc == 1
 
-- name: Create symlink for snapd
-  file:
-    src: /var/lib/snapd/snap
-    dest: /snap
-    owner: root
-    group: root
-    state: link
+- name: Download VS Code
+  get_url: 
+    url="https://go.microsoft.com/fwlink/?LinkID=760868"
+    dest="/home/{{ ansible_env.USER }}/Downloads/code.deb"
+  when: vscode_check_deb.rc == 1
 
-
-- name: Start snapd service, if not started
-  service:
-    name: snapd
-    state: started
+- name: Install VS Code
+  apt: deb="/home/{{ ansible_env.USER }}/Downloads/code.deb"
+  become: true
+  when: vscode_check_deb.rc == 1
 
 
-- name: pip install ansible-lint
-  pip:
-    name: ansible-lint
+#- name: Install packages
+#  dnf:
+#    name: ['@Development tools', 'arduino', 'esptool', 'nmap', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel', 'NetworkManager-tui','VirtualBox','steam','fedora-workstation-repositories']
+#    state: present
+

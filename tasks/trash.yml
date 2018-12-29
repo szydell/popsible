@@ -3,7 +3,6 @@
     path: "~/Downloads/trash"
     state: directory
   become: true
-  become_method: sudo
   become_user: "szydell"
  
 - name: Create Documents/trash directory
@@ -11,7 +10,6 @@
     path: "~/Documents/trash"
     state: directory
   become: true
-  become_method: sudo
   become_user: "szydell"
 
 - name: Create Pictures/trash directory
@@ -19,7 +17,6 @@
     path: "~/Pictures/trash"
     state: directory
   become: true
-  become_method: sudo
   become_user: "szydell"
 
 - name: Create Video/trash directory
@@ -27,6 +24,5 @@
     path: "~/Videos/trash"
     state: directory
   become: true
-  become_method: sudo
   become_user: "szydell"
 

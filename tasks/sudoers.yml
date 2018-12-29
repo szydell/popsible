@@ -1,6 +1,3 @@
-#- name: copy sudoers_ansible
-#  copy: src=files/sudoers_ansible dest=/etc/sudoers.d/ansible owner=root group=root mode=0440
-
 - name: copy sudoers_szydell
   copy: src=files/sudoers_szydell dest=/etc/sudoers.d/szydell owner=root group=root mode=0440
 

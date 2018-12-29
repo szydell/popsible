@@ -1,51 +1,9 @@
-#VCS repo
-
-- name: "Check if VSC repo is installed"
-  stat: path="/etc/yum.repos.d/vscode.repo"
-  register: vcs_repofile_result
-
-#Import klucza do VSC repository
-- name: import key to verify VSC repo
-  rpm_key:
-    state: present
-    key: https://packages.microsoft.com/keys/microsoft.asc
-  when: not vcs_repofile_result
-
-- name: Add Visual Studio Code repository
-  yum_repository:
-    name: vscode
-    description: Visual Studio Code repository
-    baseurl: https://packages.microsoft.com/yumrepos/vscode
-    gpgcheck: yes
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-  when: not vcs_repofile_result
-
-#RPMFUSION
-
-- name: "Check if RPMFusion Free repo is installed"
-  stat: path="/etc/yum.repos.d/rpmfusion-free.repo"
-  register: fusion_free_repofile_result
-
-- name: "Check if RPMFusion NONFree is installed"
-  stat: path="/etc/yum.repos.d/rpmfusion-nonfree.repo"
-  register: fusion_nonfree_repofile_result
+#VS Code
+#
 
 
-- name: "install the rpmfusion FREE repo package"
-  dnf: 
-    name: 'http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm'
-    state: present
-  when: not fusion_free_repofile_result
+- name: Install VCS .deb package directly from MS Site
+  apt:
+    deb: https://go.microsoft.com/fwlink/?LinkID=760868
 
-- name: "install the rpmfusion NONFREE repo package"
-  dnf:
-    name: 'http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm'
-    state: present
-  when: not fusion_nonfree_repofile_result
-
-
-
-#Update repositories
-- name: update repositories
-  dnf: update_cache=yes
-
+ 
