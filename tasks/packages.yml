@@ -12,7 +12,7 @@
   when: vscode_check_deb.rc == 1
 
 - name: Install VS Code
-  apt: deb="/home/{{ ansible_env.USER }}/Downloads/code.deb"
+  apt: deb="/home/szydell/Downloads/code.deb"
   become: true
   when: vscode_check_deb.rc == 1
 
