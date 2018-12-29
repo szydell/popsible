@@ -1,3 +1,6 @@
-- name: Install Bitwarden
+- name: Install Bitwarden CLI
   command: snap install bw
+
+- name: Install Bitwarden
+  command: snap install bitwarden
 
