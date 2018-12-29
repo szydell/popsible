@@ -20,6 +20,6 @@
 
 - name: Install packages
   apt:
-    name: ['virtualbox-ext-pack','steam','browser-plugin-freshplayer-pepperflash','vlc','strace64','gcompris','vim','mc','golang-go','snapd','arduino','esptool','dconf-editor','nmap','htop','flatpak']
+    name: ['virtualbox-ext-pack','steam','browser-plugin-freshplayer-pepperflash','vlc','gcompris','vim','mc','golang-go','snapd','arduino','esptool','dconf-editor','nmap','htop','flatpak']
 
 
