@@ -3,6 +3,8 @@
   become: true
 
   tasks:
+    - hostname:
+        name: laPtak
     - include: tasks/users.yml
     - include: tasks/ssh.yml
     - include: tasks/trash.yml
