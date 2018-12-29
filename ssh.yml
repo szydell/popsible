@@ -1,0 +1,5 @@
+- hosts: localhost 
+  gather_facts: False
+  become: true
+  tasks:
+   - include: tasks/ssh.yml
