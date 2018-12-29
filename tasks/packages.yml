@@ -18,6 +18,11 @@
   when: vscode_check_deb.rc == 1
 
 
+- name: Install packages
+  apt:
+    name: ['vim','mc','golang-go']
+
+
 #- name: Install packages
 #  dnf:
 #    name: ['@Development tools', 'arduino', 'esptool', 'nmap', 'snapd', 'htop', 'mc', 'vim', 'golang', 'flatpak', 'gcompris', 'gcompris-qt-activities', 'code', 'strace', 'vlc-extras', 'libcurl-devel', 'sqlite-devel', 'NetworkManager-tui','VirtualBox','steam','fedora-workstation-repositories']
