@@ -1,9 +1,14 @@
-#VS Code
+#Unifi
 #
 
+- name: KEY from UNIFI keyserver
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 36A1D7869245C8950F966E92D8576A8BA88D21E9
 
-- name: Install VCS .deb package directly from MS Site
-  apt:
-    deb: https://go.microsoft.com/fwlink/?LinkID=760868
+- name: add UNIFI repo
+  apt_repository:
+    repo: deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti
+    state: present
+    filename: unifi
 
- 

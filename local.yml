@@ -10,7 +10,7 @@
     - include: tasks/trash.yml
     - include: tasks/crontab.yml
     - include: tasks/sudoers.yml
-      #    - include: tasks/repositories.yml
+    - include: tasks/repositories.yml
     - include: tasks/packages.yml
       #- include: tasks/flatpak.yml
       #- include: tasks/kde.yml
