@@ -21,6 +21,6 @@
 - name: Install packages
   apt:
     update_cache: yes
-    name: ['unifi','virtualbox-ext-pack','steam','browser-plugin-freshplayer-pepperflash','vlc','gcompris','vim','mc','golang-go','snapd','arduino','esptool','dconf-editor','nmap','htop','flatpak']
+    name: ['oracle-java8-set-default','unifi','virtualbox-ext-pack','steam','browser-plugin-freshplayer-pepperflash','vlc','gcompris','vim','mc','golang-go','snapd','arduino','esptool','dconf-editor','nmap','htop','flatpak']
 
 
