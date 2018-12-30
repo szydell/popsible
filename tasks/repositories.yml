@@ -4,7 +4,7 @@
 - name: KEY from UNIFI keyserver
   apt_key:
     keyserver: keyserver.ubuntu.com
-    id: 36A1D7869245C8950F966E92D8576A8BA88D21E9
+    id: 06E85760C0A52C50 
 
 - name: add UNIFI repo
   apt_repository:
