@@ -24,3 +24,7 @@
     state: present
     filename: mongodb_3.4
 
+- name: Repo for Oracle Java
+  apt_repository:
+    repo: ppa:webupd8team/java
+
