@@ -2,7 +2,7 @@
   command: snap install --classic dmd
 
 - name: Install dlang (dub) snap
-command: snap install --classic dub
+  command: snap install --classic dub
 
 - name: Clone OneDrive repo from abraunegg
   git:
