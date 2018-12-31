@@ -1,9 +1,3 @@
-- name: Install dlang (dmd) snap
-  command: snap install --classic dmd
-
-- name: Install dlang (dub) snap
-  command: snap install --classic dub
-
 - name: Clone OneDrive repo from abraunegg
   git:
     repo: https://github.com/abraunegg/onedrive/
@@ -18,7 +12,7 @@
     chdir: /home/szydell/development/onedrive
     params:
       DC: /var/lib/snapd/snap/bin/dmd
-      NUM_THREADS: 4
+      NUM_THREADS: 10 
 
 - name: install OneDrive client (make install)
   make:

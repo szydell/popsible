@@ -15,7 +15,7 @@
       #- include: tasks/flatpak.yml
       #- include: tasks/kde.yml
     - include: tasks/bitwarden.yml
-      #- include: tasks/onedrive.yml
+    - include: tasks/onedrive.yml
       #- include: tasks/bumblebee.yml
 
 
