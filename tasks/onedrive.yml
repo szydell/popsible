@@ -41,10 +41,21 @@
   become: true
   become_user: "szydell"
 
-- name: enable and start onedrive
+# ta wersja nie działa na Ubuntu  
+#- name: enable and start onedrive
   systemd: 
     state: started
     enabled: yes
     name: onedrive@szydell.service
 
+# Po upgrade ansible do wersji 2.7, można zmienić na moduł systemd ze scope ustawionym na user
+- name: enable OneDrive
+  command: systemctl --user enable onedrive
+  become: true
+  become_user: szydell
+
+- name: start OneDrive
+  command: systemctl --user start onedrive
+  become: true
+  become_user: szydell
 
