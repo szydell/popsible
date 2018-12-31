@@ -11,7 +11,7 @@
   make:
     chdir: /home/szydell/development/onedrive
     params:
-      DC: /var/lib/snapd/snap/bin/dmd
+      #DC: /var/lib/snapd/snap/bin/dmd
       NUM_THREADS: 10 
 
 - name: install OneDrive client (make install)
